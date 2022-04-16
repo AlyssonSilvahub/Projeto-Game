@@ -120,7 +120,7 @@ switch (event.key) {
             player.lastkey = 'a'
             break
          case 'w':
-            player.velocity.y = -10
+            player.velocity.y = -20
             break
             
             case 'ArrowRight':
@@ -132,7 +132,7 @@ switch (event.key) {
             enemy.lastKey = 'ArrowLeft'
             break
          case 'ArrowUp':
-            enemy.velocity.y = -5
+            enemy.velocity.y = -20
             break
 }
             console.log(event.key)

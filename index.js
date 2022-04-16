@@ -12,7 +12,7 @@ class Sprite {
         this.position = position
         this.velocity = velocity
         this.height = 150
-        this.lastkey
+        this.lastKey
     }
 
     draw(){
@@ -125,11 +125,11 @@ switch (event.key) {
             
             case 'ArrowRight':
             keys.ArrowRight.pressed = true
-            enemy.lastkey = 'ArrowRight'
+            enemy.lasKey = 'ArrowRight'
             break
          case 'ArrowLeft':
             keys.ArrowLeft.pressed = true
-            enemy.lastkey = 'ArrowLeft'
+            enemy.lastKey = 'ArrowLeft'
             break
          case 'ArrowUp':
             enemy.velocity.y = -5

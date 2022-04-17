@@ -37,7 +37,8 @@ class Sprite {
               this.attackBox.width,
                this.attackBox.height
            )
-         }
+        // 
+    }
     }
     update() {
         this.draw()

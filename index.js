@@ -51,7 +51,7 @@ class Sprite {
        }else this.velocity.y += gravity
     }
     attack() {
-        this,isAttacking = true
+        this.isAttacking = true
         setTimeout (() => {
         this.isAttacking = false
         }, 100)

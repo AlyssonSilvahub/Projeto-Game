@@ -179,6 +179,7 @@ switch (event.key) {
             break
 }
             console.log(event.key)
+    
 })
 
 window.addEventListener('keyup', (event) => {

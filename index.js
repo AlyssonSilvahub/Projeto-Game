@@ -106,7 +106,9 @@ const keys = {
     ArrowLeft: {
         pressed: false
     }
+    
 }
+
         
 
     function animate() { 
@@ -190,7 +192,7 @@ window.addEventListener('keyup', (event) => {
             case 'a':
               keys.a.pressed = false
                 break
-                
+           console.log()     
     }
     // Enemy Keys
     switch (event.key) {

@@ -192,7 +192,7 @@ window.addEventListener('keyup', (event) => {
             case 'a':
               keys.a.pressed = false
                 break
-           console.log()     
+                
     }
     // Enemy Keys
     switch (event.key) {

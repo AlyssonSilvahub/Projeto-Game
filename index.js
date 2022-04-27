@@ -162,7 +162,7 @@ const keys = {
         player.isAttacking
         ) {
             player.isAttacking = false
-        console.log('go')
+        document.querySelector('#enemyHealth').style.width = '20%'
     }  
     if (
         rectangularCollision({

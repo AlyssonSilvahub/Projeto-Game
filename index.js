@@ -204,7 +204,7 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -20;
       break;
     case "ArrowDown":
-      enemy.isAttacking = true;
+      enemy.attack();
       break;
   }
 });
@@ -221,7 +221,7 @@ window.addEventListener("keyup", (event) => {
   // Enemy Keys
   switch (event.key) {
     case "ArrowRight":
-      keys.ArrowRight.pressed = true;
+      keys.ArrowRight.pressed = false;
       break;
     case "ArrowLeft":
       keys.ArrowLeft.pressed = false;

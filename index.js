@@ -125,6 +125,7 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
   );
 }
+let lastKey;
 
 function animate() {
   window.requestAnimationFrame(animate);
@@ -147,7 +148,7 @@ function animate() {
 if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
   enemy.velocity.x = -5;
 } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
-  enemy.velocity.x = 5;
+  enemy.velocity.x = 1;
 
   //detect for collision
   if (
@@ -176,6 +177,7 @@ if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
 animate();
 
 window.addEventListener("keydown", (event) => {
+  console.log(event.key);
   switch (event.key) {
     case "d":
       keys.d.pressed = true;
@@ -186,7 +188,7 @@ window.addEventListener("keydown", (event) => {
       player.lastkey = "a";
       break;
     case "w":
-      player.velocity.y = -20;
+      player.velocity.y = -15;
       break;
     case "s":
       player.attack();
@@ -207,6 +209,7 @@ window.addEventListener("keydown", (event) => {
       enemy.attack();
       break;
   }
+  console.log(event.key);
 });
 
 window.addEventListener("keyup", (event) => {
@@ -216,6 +219,9 @@ window.addEventListener("keyup", (event) => {
       break;
     case "a":
       keys.a.pressed = false;
+      break;
+    case "w":
+      keys.w.pressed = false;
       break;
   }
   // Enemy Keys

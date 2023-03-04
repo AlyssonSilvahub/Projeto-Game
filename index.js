@@ -125,7 +125,6 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
   );
 }
-let lastKey;
 
 function animate() {
   window.requestAnimationFrame(animate);
@@ -148,7 +147,7 @@ function animate() {
 if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
   enemy.velocity.x = -5;
 } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
-  enemy.velocity.x = 1;
+  enemy.velocity.x = 5;
 
   //detect for collision
   if (

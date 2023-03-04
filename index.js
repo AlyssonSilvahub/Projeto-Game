@@ -187,7 +187,7 @@ window.addEventListener("keydown", (event) => {
       player.lastkey = "a";
       break;
     case "w":
-      player.velocity.y = -15;
+      player.velocity.y = -20;
       break;
     case "s":
       player.attack();

@@ -158,9 +158,8 @@ if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
     player.isAttacking
   ) {
     player.isAttacking = false;
-    console.log("go");
     enemy.health = -20;
-    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+    document.querySelector("#enemyHealth").style.width = enemy.health + "%20";
   }
   if (
     rectangularCollision({

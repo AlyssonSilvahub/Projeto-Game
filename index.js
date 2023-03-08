@@ -159,7 +159,7 @@ if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
   ) {
     player.isAttacking = false;
     enemy.health = -20;
-    document.querySelector("#enemyHealth").style.width = enemy.health + "%20";
+    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
   if (
     rectangularCollision({
@@ -169,7 +169,8 @@ if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    console.log("enemy attack sucessful");
+    player.health = -20;
+    document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 }
 

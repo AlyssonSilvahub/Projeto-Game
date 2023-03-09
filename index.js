@@ -19,6 +19,7 @@ class Sprite {
         x: this.position.x,
         y: this.position.y,
       },
+      offset: offset,
       width: 100,
       height: 50,
     };
@@ -32,15 +33,15 @@ class Sprite {
 
     //attack box
 
-    //if (this.isAttacking) {
-    c.fillStyle = "green";
-    c.fillRect(
-      this.attackBox.position.x,
-      this.attackBox.position.y,
-      this.attackBox.width,
-      this.attackBox.height
-    );
-    //}
+    if (this.isAttacking) {
+      c.fillStyle = "green";
+      c.fillRect(
+        this.attackBox.position.x,
+        this.attackBox.position.y,
+        this.attackBox.width,
+        this.attackBox.height
+      );
+    }
   }
   update() {
     this.draw();
@@ -111,7 +112,7 @@ const keys = {
   },
 };
 
-function rectangularCollision({ rectangle1, rectangle2 }) {
+function rectangularColision({ rectangle1, rectangle2 }) {
   return (
     rectangle1.attackBox.position.x + rectangle1.attackBox.width >=
       rectangle2.position.x &&
@@ -139,23 +140,34 @@ function animate() {
   } else if (keys.d.pressed && player.lastkey === "d") {
     player.velocity.x = 5;
   }
-}
-//Enemy movement
-if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
-  enemy.velocity.x = -5;
-} else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
-  enemy.velocity.x = 5;
-}
-// detect colision
-if (
-  player.attackBox.position.x + player.attackBox.width >= enemy.position.x &&
-  player.attackBox.position.x <= enemy.position.x + enemy.width &&
-  player.attackBox.position.y + player.attackBox.height >= enemy.position.y &&
-  player.attackBox.position.y <= enemy.position.y + enemy.height &&
-  player.isAttacking
-) {
-  player.isAttacking = false;
-  console.log("go");
+
+  //Enemy movement
+  if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
+    enemy.velocity.x = -5;
+  } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
+    enemy.velocity.x = 5;
+  }
+  // detect colision
+  if (
+    rectangularColision({
+      rectangle1: player,
+      rectangle2: enemy,
+    }) &&
+    player.isAttacking
+  ) {
+    player.isAttacking = false;
+    console.log("go");
+  }
+  if (
+    rectangularColision({
+      rectangle1: enemy,
+      rectangle2: player,
+    }) &&
+    enemy.isAttacking
+  ) {
+    enemy.isAttacking = false;
+    console.log("enemy attack successful");
+  }
 }
 
 animate();
@@ -189,7 +201,7 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -20;
       break;
     case "ArrowDown":
-      enemy.attack();
+      enemy.isAttacking = true;
       break;
   }
 });

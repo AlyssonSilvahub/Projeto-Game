@@ -6,9 +6,9 @@
   </style>
 </head>
 <body>
-  <!-- red container div-->
+  <!--red container div-->
   <div style="position: relative; display: inline-block">
-    <!-- smaller red container div-->
+    <!--smaell red container div-->
     <div
       style="
         position: absolute;
@@ -18,30 +18,23 @@
         padding: 20px;
       "
     >
-      <!-- player heath -->
-      <div
-        style="
-          position: relative;
-          height: 30px;
-          width: 100%;
-          display: flex;
-          justify-content: flex-end;
-        "
-      >
-        <div style="background-color: yellow; height: 30px; width: 100%"></div>
+      <!--player Health-->
+      <div style="position: relative; height: 30px; width: 100%">
+        <div style="background-color: yellow; height: 30px"></div>
         <div
           id="playerHealth"
           style="
             position: absolute;
-            background-color: blue;
+            background: blue;
             top: 0;
             right: 0;
             bottom: 0;
-            width: 100%;
+            left: 0;
           "
         ></div>
       </div>
-      <!-- time -->
+
+      <!--time-->
       <div
         style="
           background-color: red;
@@ -50,14 +43,14 @@
           flex-shrink: 0;
         "
       ></div>
-      <!-- enemy heath -->
+      <!--enemy Health-->
       <div style="position: relative; height: 30px; width: 100%">
         <div style="background-color: yellow; height: 30px"></div>
         <div
           id="enemyHealth"
           style="
             position: absolute;
-            background-color: blue;
+            background: blue;
             top: 0;
             right: 0;
             bottom: 0;
@@ -69,6 +62,5 @@
     </div>
     <canvas></canvas>
   </div>
-
   <script src="index.js"></script>
 </body>

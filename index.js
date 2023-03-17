@@ -158,7 +158,7 @@ function animate() {
   ) {
     player.isAttacking = false;
     enemy.health -= 20;
-    document.querySelector("enemyHealth").style.width = enemy.health + "%";
+    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
   if (
     rectangularColision({
@@ -169,7 +169,7 @@ function animate() {
   ) {
     enemy.isAttacking = false;
     player.health -= 20;
-    document.querySelector("playerHealth").style.width = player.health + "%";
+    document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 }
 

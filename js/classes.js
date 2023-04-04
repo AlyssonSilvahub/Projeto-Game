@@ -52,12 +52,9 @@ class Fighter extends Sprite {
   }) {
     super({
       position,
-      image,
+      imageSrc,
       scale,
       framesMax,
-      framesCurrent,
-      framesElapsed,
-      framesHold,
     });
 
     this.velocity = velocity;
@@ -76,6 +73,9 @@ class Fighter extends Sprite {
     this.color = color;
     this.isAttacking;
     this.health = 100;
+    this.framesCurrent = 0;
+    this.framesElapsed = 0;
+    this.framesHold = 5;
   }
 
   update() {

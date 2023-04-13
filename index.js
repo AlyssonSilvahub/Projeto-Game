@@ -111,7 +111,7 @@ function animate() {
   enemy.velocity.x = 0;
 
   //player movement
-  player.image = player.sprites.idle.image;
+  player.switchSprite("idle");
   if (keys.a.pressed && player.lastkey === "a") {
     player.velocity.x = -5;
     player.image = player.sprites.run.image;
@@ -122,6 +122,7 @@ function animate() {
 
   if (player.velocity.y < 0) {
     player.image = player.sprites.jump.image;
+    player.framesMax = player.sprites.jump.framesMax;
   }
 
   if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {

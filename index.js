@@ -111,13 +111,15 @@ function animate() {
   enemy.velocity.x = 0;
 
   //player movement
-  player.switchSprite("idle");
+
   if (keys.a.pressed && player.lastkey === "a") {
     player.velocity.x = -5;
     player.switchSprite("run");
   } else if (keys.d.pressed && player.lastkey === "d") {
     player.velocity.x = 5;
     player.switchSprite("run");
+  } else {
+    player.switchSprite("idle");
   }
 
   if (player.velocity.y < 0) {

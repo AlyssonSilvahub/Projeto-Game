@@ -85,6 +85,7 @@ const enemy = new Fighter({
     y: 0,
   },
 });
+console.log(player);
 
 const keys = {
   a: {

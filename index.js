@@ -85,7 +85,6 @@ const enemy = new Fighter({
     y: 0,
   },
 });
-console.log(player);
 
 const keys = {
   a: {
@@ -205,6 +204,7 @@ window.addEventListener("keydown", (event) => {
     case "ArrowDown":
       enemy.attack();
       break;
+      console.log(event.key);
   }
 });
 window.addEventListener("keyup", (event) => {

@@ -9,15 +9,30 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 
 class Sprite {
-  constructor({ position, velocity }) {
+  constructor({ position, velocity, color = "red" }) {
     this.position = position;
     this.velocity = velocity;
     this.height = 150;
     this.lastKey;
+    this.attackBox = {
+      position: this.position,
+      width: 100,
+      height: 50,
+    };
+    this.color = color;
   }
   draw() {
-    c.fillStyle = "red";
+    c.fillStyle = this.color;
     c.fillRect(this.position.x, this.position.y, 50, this.height);
+
+    //attack Box
+    c.fillStyle = "green";
+    c.fillRect(
+      this.attackBox.position.x,
+      this.attackBox.position.y,
+      this.attackBox.width,
+      this.attackBox.height
+    );
   }
   update() {
     this.draw();
@@ -51,6 +66,7 @@ const enemy = new Sprite({
     x: 0,
     y: 0,
   },
+  color: "blue",
 });
 
 const keys = {
@@ -77,10 +93,10 @@ function animate() {
   c.fillRect(0, 0, canvas.width, canvas.height);
   player.update();
   enemy.update();
-  //console.log("gg");
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
+
   // player movement
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
@@ -94,11 +110,17 @@ function animate() {
   } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 5;
   }
+  // detect for colision
+  if (
+    player.attackBox.position.x + player.attackBox.width >=
+    enemy.position.x
+  ) {
+    console.log("go");
+  }
 }
 animate();
 
 window.addEventListener("keydown", (event) => {
-  console.log(event.key);
   switch (event.key) {
     case "d":
       keys.d.pressed = true;
@@ -124,7 +146,6 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -20;
       break;
   }
-  console.log(event.key);
 });
 
 window.addEventListener("keyup", (event) => {
@@ -149,5 +170,4 @@ window.addEventListener("keyup", (event) => {
       keys.ArrowLeft.pressed = false;
       break;
   }
-  console.log(event.key);
 });

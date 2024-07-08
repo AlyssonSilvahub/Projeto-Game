@@ -111,7 +111,7 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-  player.switchSprite("Idle");
+  player.switchSprite("I dle");
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
     player.switchSprite("run");

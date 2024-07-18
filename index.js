@@ -206,7 +206,7 @@ function animate() {
     enemy.switchSprite("fall");
   }
 
-  // detect for colision
+  // detect for colision & enemy get hits
   if (
     rectangularCollision({
       rectangle1: player,
@@ -226,7 +226,7 @@ function animate() {
   if (player.isAttacking && player.framesCurrent === 4) {
     player.isAttacking = false;
   }
-
+  // this is were our player get hit
   if (
     rectangularCollision({
       rectangle1: enemy,
@@ -235,8 +235,9 @@ function animate() {
     enemy.isAttacking &&
     enemy.framesCurrent === 2
   ) {
+    player.takeHit();
     enemy.isAttacking = false;
-    player.health -= 10;
+
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 

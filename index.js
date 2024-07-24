@@ -241,7 +241,7 @@ function animate() {
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 
-  //if enemy misses
+  //if player misses
 
   if (enemy.isAttacking && enemy.framesCurrent === 2) {
     enemy.isAttacking = false;

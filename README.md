@@ -1,8 +1,8 @@
-# 🥷 Samurai 2D Adventure
+# Samurai 2D Adventure
 
 **Samurai 2D Adventure** é um emocionante jogo de ação side-scroller onde você controla um samurai em sua jornada para restaurar a paz em sua terra.
 
-### 🚀 Passos para Instalação
+### Passos para Instalação
 
 1. **Clone o repositório:**
 
@@ -27,11 +27,15 @@
    npm start
    ```
 
-## 🎮 Como Jogar
+## Como Jogar
 
--
+- Controle o samurai com as teclas de seta ou W, A, S, D.
+- Use a tecla J para atacar.
+- Pressione a tecla K para pular.
+- Use a tecla L para habilidade especial.
+- Pressione a tecla Esc para pausar o jogo.
 
-## 🎮 Controles
+## Controles
 
 - **Movimento:** Teclas de seta ou W, A, S, D
 - **Ataque:** Tecla J
@@ -39,10 +43,12 @@
 - **Habilidade Especial:** Tecla L
 - **Pausa:** Tecla Esc
 
-## 📜 Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT.
 
 ---
 
-**Divirta-se jogando Samurai 2D Adventure!** 🎉
+## **Divirta-se jogando Samurai 2D Adventure!**
+
+**Divirta-se jogando Samurai 2D Adventure!**

@@ -127,7 +127,6 @@ class Fighter extends Sprite {
 
   takeHit() {
     this.switchSprite("takeHit");
-    this.enemy.health -= 20;
   }
 
   switchSprite(sprite) {

@@ -135,11 +135,13 @@ class Fighter extends Sprite {
 
   switchSprite(sprite) {
     if (this.image === this.sprites.death.image) return;
+
+    //overriding all other animation with the attack animation
+
     if (
       this.image === this.sprites.attack1.image &&
       this.framesCurrent < this.sprites.attack1.framesMax - 1
     )
-      //overriding all other animation with the attack animation
       return;
 
     // override when fighter gets hit
@@ -194,6 +196,7 @@ class Fighter extends Sprite {
           this.framesCurrent = 0;
         }
         break;
+
       case "death":
         if (this.image !== this.sprites.death.image) {
           this.image = this.sprites.death.image;

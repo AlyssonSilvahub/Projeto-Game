@@ -105,12 +105,12 @@ class Fighter extends Sprite {
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
     // draw the attack box
-    /* c.fillRect(
+    /*c.fillRect(
       this.attackBox.position.x,
       this.attackBox.position.y,
       this.attackBox.width,
       this.attackBox.height
-    ); */
+    );*/
 
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
@@ -127,7 +127,7 @@ class Fighter extends Sprite {
 
   takeHit() {
     this.switchSprite("takeHit");
-    this.health -= 20;
+    this.health -= 10;
     if (this.health <= 0) {
       this.switchSprite("death");
     } else this.switchSprite("takeHit");

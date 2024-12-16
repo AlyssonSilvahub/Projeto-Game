@@ -228,7 +228,9 @@ function animate() {
     enemy.takeHit();
     player.isAttacking = false;
 
-    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+    gsap.to("#enemyHealth", {
+      width: enemy.health + "%",
+    });
   }
 
   //if player misses
@@ -249,7 +251,9 @@ function animate() {
     enemy.isAttacking = false;
     player.health -= 10;
 
-    document.querySelector("#playerHealth").style.width = player.health + "%";
+    gsap.to("#playerHealth", {
+      width: player.health + "%",
+    });
   }
 
   //if player misses
